@@ -1,7 +1,9 @@
 # NotSwiftOnSecurity
 Modified version of SwiftOnSecurity, in order to enable in-depth collection to aide deliberate hunting and incident response.
 ## Install
-sysmon.exe -accepteula -i sysmonconfig-export-modified.xml
+```
+c:\>sysmon.exe -accepteula -i sysmonconfig-export-modified.xml
+```
 ## Configure Splunk Universal Forwarder
 Add the following to C:\Program Files\SplunkUniversalForwarder\etc\apps\SplunkUniversalForwarder\local\inputs.conf
 ```
