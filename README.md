@@ -13,3 +13,7 @@ current_only = 0
 disabled = 0
 start_from = oldest
 ```
+Restart the Splunk Universal Forwarder
+```
+c:\Program Files\SplunkUniversalForwarder\bin\>splunk.exe restart
+```
