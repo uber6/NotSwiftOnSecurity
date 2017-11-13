@@ -171,6 +171,9 @@
 		<!--DATA: UtcTime, SourceProcessGuid, SourceProcessId, SourceThreadId, SourceImage, TargetProcessGuid, TargetProcessId, TargetImage, GrantedAccess, CallTrace-->
 		<ProcessAccess onmatch="include">
 		<!--COMMENT:	Monitor for processes accessing other process' memory. This can be valuable, but can cause a huge number of events.-->
+			<!--Following 2 GrantedAccess conditions (either one) is required by Mimikatz.-->
+			<GrantedAccess condition="is">0x1010</GrantedAccess>
+			<GrantedAccess condition="is">0x1410</GrantedAccess>
 		</ProcessAccess>
 
 	<!--SYSMON EVENT ID 11 : FILE CREATED-->
