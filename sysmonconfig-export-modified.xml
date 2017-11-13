@@ -173,8 +173,9 @@
 		<!--COMMENT:	Monitor for processes accessing other process' memory. This can be valuable, but can cause a huge number of events.-->
 			<!--Following 2 GrantedAccess conditions (either one) is required by Mimikatz.-->
 			<GrantedAccess condition="is">0x1010</GrantedAccess>
+			<GrantedAccess condition="is">0x1038</GrantedAccess>
+			<!--Following GrantedAccess & 2 CallTrace conditions are required by older version of Mimikatz.-->
 			<GrantedAccess condition="is">0x1410</GrantedAccess>
-			<!--When the GrantedAccess=0x1410 for Mimikatz, the following CallTrace conditions are also called.-->
 			<CallTrace condition="contains">ntdll.dll+</CallTrace>
 			<CallTrace condition="contains">KERNELBASE.dll+</CallTrace>
 		</ProcessAccess>
