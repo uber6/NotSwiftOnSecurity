@@ -141,6 +141,14 @@
 		<!--DATA: UtcTime, ProcessGuid, ProcessId, Image, ImageLoaded, Hashes, Signed, Signature, SignatureStatus-->
 		<ImageLoad onmatch="include">
 		<!--COMMENT:	Can cause high system load, disabled by default, important examples included below.-->
+			<Image condition="end with">powershell.exe</Image> <!--Track all images loaded by powershell for further investigation (ie. PowerShell Empire).-->
+			<!-- Following 6 images are typically loaded by Mimikatz.-->
+			<ImageLoaded condition="is">C:\Windows\System32\WinSCard.dll</ImageLoaded>
+			<ImageLoaded condition="is">C:\Windows\System32\cryptdll.dll</ImageLoaded>
+			<ImageLoaded condition="is">C:\Windows\System32\hid.dll</ImageLoaded>
+			<ImageLoaded condition="is">C:\Windows\System32\samlib.dll</ImageLoaded>
+			<ImageLoaded condition="is">C:\Windows\System32\vaultcli.dll</ImageLoaded>
+			<ImageLoaded condition="end with">WMINet_Utils.dll</ImageLoaded>
 		</ImageLoad>
 
 	<!--SYSMON EVENT ID 8 : REMOTE THREAD CREATED-->
